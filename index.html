@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Roadmap</title>
+  <title>Product Roadmap</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,8 +15,8 @@
 
     .roadmap {
       display: grid;
-      grid-template-columns: 200px repeat(6, 1fr);
-      row-gap: 12px;
+      grid-template-columns: 220px repeat(6, 1fr);
+      row-gap: 16px;
       align-items: center;
     }
 
@@ -27,6 +27,7 @@
 
     .project {
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .bar {
@@ -55,19 +56,19 @@
 
   <!-- Project 1 -->
   <div class="project">Интеграция Магнита</div>
-  <div class="bar progress" style="grid-column: 2 / 5;"></div>
+  <div class="bar progress" style="grid-column: 2 / 4;"></div>
 
   <!-- Project 2 -->
   <div class="project">Рефакторинг меню</div>
-  <div class="bar progress" style="grid-column: 3 / 6;"></div>
+  <div class="bar progress" style="grid-column: 4 / 7;"></div>
 
   <!-- Project 3 -->
   <div class="project">Уведомления партнёрам</div>
-  <div class="bar planned" style="grid-column: 4 / 7;"></div>
+  <div class="bar planned" style="grid-column: 4 / 6;"></div>
 
   <!-- Project 4 -->
   <div class="project">AB тест комиссии</div>
-  <div class="bar blocked" style="grid-column: 3 / 4;"></div>
+  <div class="bar blocked" style="grid-column: 2 / 3;"></div>
 </div>
 
 </body>
