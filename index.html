@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Roadmap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .roadmap {
+      display: grid;
+      grid-template-columns: 200px repeat(6, 1fr);
+      gap: 10px;
+    }
+    .header {
+      font-weight: bold;
+      text-align: center;
+    }
+    .project {
+      font-weight: bold;
+    }
+    .bar {
+      grid-column: span 2;
+      background: #4caf50;
+      border-radius: 6px;
+      height: 30px;
+    }
+    .planned { background: #9e9e9e; }
+    .progress { background: #4caf50; }
+    .blocked { background: #f44336; }
+  </style>
+</head>
+<body>
+
+<h1>Product Roadmap</h1>
+
+<div class="roadmap">
+  <div></div>
+  <div class="header">Jan</div>
+  <div class="header">Feb</div>
+  <div class="header">Mar</div>
+  <div class="header">Apr</div>
+  <div class="header">May</div>
+  <div class="header">Jun</div>
+
+  <div class="project">Интеграция Магнита</div>
+  <div class="bar progress"></div>
+
+  <div class="project">Рефакторинг меню</div>
+  <div></div>
+  <div class="bar progress"></div>
+
+  <div class="project">Уведомления партнёрам</div>
+  <div></div>
+  <div></div>
+  <div class="bar planned"></div>
+
+  <div class="project">AB тест комиссии</div>
+  <div></div>
+  <div class="bar blocked"></div>
+</div>
+
+</body>
+</html>
