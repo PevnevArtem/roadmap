@@ -1,149 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
   <title>Roadmap Q1 2026</title>
 
   <style>
-    :root {
-      --bg: #121212;
-      --card: #1e1e1e;
-      --text: #eee;
-      --muted: #aaa;
-      --research: #FFD700;
-      --backlog: #666;
-      --active: #E60012;
-    }
-
     body {
-      margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 24px;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .subtitle {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
+      color: #666;
       margin-bottom: 24px;
     }
 
-    .feature {
-      margin-bottom: 18px;
+    .row {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
-    .feature-title {
-      padding: 10px 14px;
-      background: var(--card);
-      border-radius: 12px 12px 0 0;
-      font-weight: bold;
-    }
-
-    .timeline-wrapper {
-      overflow-x: auto;
+    .title {
+      width: 260px;
+      font-weight: 500;
+      font-size: 14px;
     }
 
     .timeline {
       display: flex;
-      gap: 4px;
-      padding: 12px;
-      background: var(--card);
-      border-radius: 0 0 12px 12px;
-      min-width: 600px;
+      gap: 6px;
     }
 
     .week {
-      flex: 1;
-      min-width: 60px;
-      height: 28px;
-      border-radius: 8px;
-      background: #2a2a2a;
-      font-size: 10px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 44px;
+      height: 24px;
+      border-radius: 6px;
+      background: #eee;
     }
 
-    .week.current {
-      outline: 2px solid #fff;
-    }
-
-    .week.R { background: var(--research); color: #000; }
-    .week.D { background: var(--backlog); }
-    .week.A { background: var(--active); color: #fff; }
+    .A { background: #4caf50; }
+    .R { background: #ff9800; }
+    .D { background: #2196f3; }
   </style>
 </head>
 
 <body>
+  <h1>Roadmap Q1 2026</h1>
+  <div class="subtitle">B2B RTE Magnit OMNI</div>
 
-<h1>Roadmap Q1 2026</h1>
-<div class="subtitle">B2B RTE · Магнит OMNI</div>
+  <div id="container"></div>
 
-<div id="container"></div>
-
-<script>
-  const features = [
-  {
-    title: 'Интеграция заказов с Grow Food',
-    weeks: { 0: 'A', 1: 'A', 2: 'A', 3: 'A' }
-  },
-  {
-    title: 'Retry-заказы в интеграциях',
-    weeks: { 0: 'R', 1: 'R', 2: 'D', 3: 'D' }
-  }
-];
-
-  const startDate = new Date(2026, 0, 12);
-  const totalWeeks = 12;
-  const today = new Date();
-  const container = document.getElementById('container');
-
-  features.forEach(f => {
-    const feature = document.createElement('div');
-    feature.className = 'feature';
-
-    feature.innerHTML = 
-      <div class="feature-title">${f.title}</div>
-      <div class="timeline-wrapper">
-        <div class="timeline"></div>
-      </div>
-    ;
-
-    const timeline = feature.querySelector('.timeline');
-
-    for (let i = 0; i < totalWeeks; i++) {
-      const weekStart = new Date(startDate);
-      weekStart.setDate(startDate.getDate() + i * 7);
-
-      const weekEnd = new Date(weekStart);
-      weekEnd.setDate(weekEnd.getDate() + 4);
-
-      const div = document.createElement('div');
-      div.className = 'week';
-
-      if (today >= weekStart && today <= weekEnd) {
-        div.classList.add('current');
+  <script>
+    const features = [
+      {
+        title: 'Интеграция заказов с Grow Food',
+        weeks: ['A','A','A','A']
+      },
+      {
+        title: 'Retry-заказы в интеграциях',
+        weeks: ['R','R','D','D']
       }
+    ];
 
-      if (f.weeks[i]) {
-        div.classList.add(f.weeks[i]);
-      }
+    const container = document.getElementById('container');
 
-      timeline.appendChild(div);
-    }
+    features.forEach(f => {
+      const row = document.createElement('div');
+      row.className = 'row';
 
-    container.appendChild(feature);
-  });
-</script>
+      const title = document.createElement('div');
+      title.className = 'title';
+      title.textContent = f.title;
 
+      const timeline = document.createElement('div');
+      timeline.className = 'timeline';
+
+      f.weeks.forEach(w => {
+        const cell = document.createElement('div');
+        cell.className = week ${w};
+        timeline.appendChild(cell);
+      });
+
+      row.appendChild(title);
+      row.appendChild(timeline);
+      container.appendChild(row);
+    });
+  </script>
 </body>
 </html>
