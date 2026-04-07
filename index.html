@@ -53,358 +53,209 @@
       color: #bbb;
     }
 
-    .backlog {
-      background: #777;
-      color: #fff;
-    }
-
-    .develop {
-      background: #ffd700;
-      color: #000;
-    }
-
-    .active {
-      background: #e60012;
-      color: #fff;
-    }
-
-    .done {
-      background: #2ecc71;
-      color: #fff;
-    }
+    .backlog { background: #777; color: #fff; }
+    .develop { background: #ffd700; color: #000; }
+    .active { background: #e60012; color: #fff; }
+    .done { background: #2ecc71; color: #fff; }
 
     .legend {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 24px;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.legend-color {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-}
+    .legend-color {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+
+    /* 🔽 Новое — секции */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    details {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+
+    summary {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "▼";
+      float: right;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body>
 
-  <h1>Project Roadmap Q1 2026</h1>
-  <p>B2B RTE · Magnit OMNI</p>
+<h1>Project Roadmap Q1 2026</h1>
+<p>B2B RTE · Magnit OMNI</p>
+
 <div style="text-align:center; margin-top:12px;">
-  <a 
-    href="https://forms.gle/Mo1cYpELzjqFaX778"
-    target="_blank"
-    style="
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 20px;
-      border-bottom: 1px dashed rgba(255,255,255,0.5);
-    "
-  >
+  <a href="https://forms.gle/Mo1cYpELzjqFaX778" target="_blank"
+     style="color:#fff; text-decoration:none; font-size:20px; border-bottom:1px dashed rgba(255,255,255,0.5);">
     💬 Предложить идею / оставить фидбек
   </a>
 </div>
 
-    <div class="legend">
-  <div class="legend-item">
-    <div class="legend-color backlog"></div>
-    <span>Бэклог</span>
-  </div>
-
-  <div class="legend-item">
-    <div class="legend-color develop"></div>
-    <span>Разработка</span>
-  </div>
-
-  <div class="legend-item">
-    <div class="legend-color active"></div>
-    <span>В работе</span>
-  </div>
-
-  <div class="legend-item">
-    <div class="legend-color done"></div>
-    <span>Реализовано</span>
-  </div>
+<div class="legend">
+  <div class="legend-item"><div class="legend-color backlog"></div>Бэклог</div>
+  <div class="legend-item"><div class="legend-color develop"></div>Разработка</div>
+  <div class="legend-item"><div class="legend-color active"></div>В работе</div>
+  <div class="legend-item"><div class="legend-color done"></div>Реализовано</div>
 </div>
-  
-  <div class="card">
-    <div class="title">Реализация ИИ-бота в Elma для базовой отчетности и аналитики</div>
-    <div class="timeline">
-      <div class="week research">09.02-13.02</div>
-      <div class="week active">16.02-20.02</div>
-      <div class="week active">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week backlog">16.03-20.03</div>
-      <div class="week baclog">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-  
-  <div class="card">
-    <div class="title">Интеграция 1С в Elma</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week active">16.02-20.02</div>
-      <div class="week active">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="title">Интеграция B2B платформы в Elma</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week develop">9.03-13.03</div>
-      <div class="week develop">16.03-20.03</div>
-      <div class="week develop">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Интеграция админ-панели RTE в Elma</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week develop">16.03-20.03</div>
-      <div class="week develop">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-   <div class="card">
-    <div class="title">Парсинг Яндекс Карт через CRM систему Elma</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-<div class="card">
-    <div class="title">Дизайн pdf инструкции по работе с ЛК для партнеров</div>
-    <div class="timeline">
-      <div class="week active">09.02-13.02</div>
-      <div class="week active">16.02-20.02</div>
-      <div class="week active">23.02-27.02</div>
-      <div class="week done">2.03-6.03</div>
-      <div class="week">9.03-13.03</div>
-      <div class="week">16.03-20.03</div>
-      <div class="week">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Разработка системы видеообучения для партнеров</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Интеграция инструкций в ЛК для партнеров</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week develop">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Разработка инструкций по работе с ЛК для партнеров на интеграциях</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week develop">9.03-13.03</div>
-      <div class="week develop">16.03-20.03</div>
-      <div class="week develop">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-   <div class="card">
-    <div class="title">Реализация интеграции с Гуляш</div>
-    <div class="timeline">
-      <div class="week active">09.02-13.02</div>
-      <div class="week active">16.02-20.02</div>
-      <div class="week active">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active>16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-     <div class="card">
-    <div class="title">Реализация интеграции с R_Keeper</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week develop">9.03-13.03</div>
-      <div class="week develop">16.03-20.03</div>
-      <div class="week develop">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-       <div class="card">
-    <div class="title">Разработка стандарта проверки конрагентов</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week develop">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Доработка дэшборда LM</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Доработка дэшборда CRM</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week develop">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
+<!-- CRM -->
+<div class="section">
+  <details open>
+    <summary>CRM</summary>
 
     <div class="card">
-      <div class="title">Дипдайв CR в RTE</div>
+      <div class="title">Парсинг Яндекс Карт через CRM систему Elma</div>
       <div class="timeline">
         <div class="week develop">09.02-13.02</div>
         <div class="week develop">16.02-20.02</div>
-        <div class="week active">23.02-27.02</div>
+        <div class="week develop">23.02-27.02</div>
+        <div class="week develop">2.03-6.03</div>
+        <div class="week active">9.03-13.03</div>
+        <div class="week active">16.03-20.03</div>
+        <div class="week active">23.03-27.03</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title">Доработка дэшборда CRM</div>
+      <div class="timeline">
+        <div class="week develop">09.02-13.02</div>
+        <div class="week develop">16.02-20.02</div>
+        <div class="week develop">23.02-27.02</div>
+        <div class="week develop">2.03-6.03</div>
+        <div class="week active">9.03-13.03</div>
+        <div class="week active">16.03-20.03</div>
+        <div class="week active">23.03-27.03</div>
+      </div>
+    </div>
+
+  </details>
+</div>
+
+<!-- LM -->
+<div class="section">
+  <details>
+    <summary>LM</summary>
+
+    <div class="card">
+      <div class="title">Доработка дэшборда LM</div>
+      <div class="timeline">
+        <div class="week develop">09.02-13.02</div>
+        <div class="week develop">16.02-20.02</div>
         <div class="week active">2.03-6.03</div>
-        <div class="week done">9.03-13.03</div>
-        <div class="week">16.03-20.03</div>
-        <div class="week">23.03-27.03</div>
-        <div class="week">27.03-01.04</div>
+        <div class="week active">9.03-13.03</div>
+      </div>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Разработка метрики наполненности ленты</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week active">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week done">16.03-20.03</div>
-      <div class="week">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Разработка алертов  в РТЕ</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week done">16.02-20.02</div>
-      <div class="week">23.02-27.02</div>
-      <div class="week">2.03-6.03</div>
-      <div class="week">9.03-13.03</div>
-      <div class="week">16.03-20.03</div>
-      <div class="week">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="title">Внедрение требований юр.дайджеста в продукт</div>
-    <div class="timeline">
-      <div class="week develop">09.02-13.02</div>
-      <div class="week develop">16.02-20.02</div>
-      <div class="week develop">23.02-27.02</div>
-      <div class="week active">2.03-6.03</div>
-      <div class="week active">9.03-13.03</div>
-      <div class="week active">16.03-20.03</div>
-      <div class="week active">23.03-27.03</div>
-      <div class="week">27.03-01.04</div>
-    </div>
-  </div>
 
     <div class="card">
       <div class="title">Реализация ЭДО в LM</div>
       <div class="timeline">
         <div class="week backlog">09.02-13.02</div>
-        <div class="week backlog">16.02-20.02</div>
-        <div class="week backlog">23.02-27.02</div>
         <div class="week develop">2.03-6.03</div>
-        <div class="week develop">9.03-13.03</div>
-        <div class="week develop">16.03-20.03</div>
         <div class="week active">23.03-27.03</div>
-        <div class="week">27.03-01.04</div>
+      </div>
     </div>
-  </div>
-  
+
+  </details>
+</div>
+
+<!-- RTE -->
+<div class="section">
+  <details>
+    <summary>RTE</summary>
+
+    <div class="card">
+      <div class="title">Интеграция админ-панели RTE в Elma</div>
+      <div class="timeline">
+        <div class="week develop">09.02-13.02</div>
+        <div class="week active">9.03-13.03</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title">Разработка алертов в RTE</div>
+      <div class="timeline">
+        <div class="week develop">09.02-13.02</div>
+        <div class="week done">16.02-20.02</div>
+      </div>
+    </div>
+
+  </details>
+</div>
+
+<!-- Аналитика -->
+<div class="section">
+  <details>
+    <summary>Аналитика</summary>
+
+    <div class="card">
+      <div class="title">ИИ-бот для аналитики</div>
+      <div class="timeline">
+        <div class="week active">16.02-20.02</div>
+        <div class="week active">2.03-6.03</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title">Метрика наполненности</div>
+      <div class="timeline">
+        <div class="week active">23.02-27.02</div>
+        <div class="week done">16.03-20.03</div>
+      </div>
+    </div>
+
+  </details>
+</div>
+
+<!-- Реализовано -->
+<div class="section">
+  <details>
+    <summary>Реализовано</summary>
+
+    <div class="card">
+      <div class="title">PDF инструкция для партнеров</div>
+      <div class="timeline">
+        <div class="week done">2.03-6.03</div>
+      </div>
+    </div>
+
+  </details>
+</div>
+
 </body>
 </html>
